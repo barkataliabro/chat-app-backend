@@ -13,10 +13,24 @@ import MessageModel from "./Models/Message.js"
 import getconversation from "./helper/getconversation.js"
 
 const app = express();
-app.use(cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-}))
+
+const corsOptions = {
+    origin: 'http://localhost:5173', // Replace with your frontend's origin
+    credentials: true, // Allow cookies and other credentials
+  };
+  
+  app.use(cors(corsOptions));
+
+
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+  });
+  
+  
 dotenv.config();
 
 
@@ -24,7 +38,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/api", userrouter)
 app.get("/",(req,res)=>{
-    res.send("hello api is working")
+    res.send("hello api is working cors changing")
 })
 
 const connect = () => {
