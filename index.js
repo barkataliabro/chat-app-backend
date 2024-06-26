@@ -14,7 +14,7 @@ import getconversation from "./helper/getconversation.js"
 
 const app = express();
 app.use(cors({
-    origin: "http://localhost:5173/",
+    origin: "http://localhost:5173",
     credentials: true
 }))
 dotenv.config();
@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/api", userrouter)
 app.get("/",(req,res)=>{
-    res.send("hello api is working...")
+    res.send("hello api is working")
 })
 
 const connect = () => {
