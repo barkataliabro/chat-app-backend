@@ -2,6 +2,7 @@ import UserModel from "../Models/Usermodel.js";
 import bcryptjs from "bcryptjs";
 
 async function registerUser(req, res) {
+    console.log("regiter controller")
     try {
         const { name, email, password, profilePic } = req.body
 

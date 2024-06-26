@@ -14,8 +14,8 @@ import getconversation from "./helper/getconversation.js"
 
 const app = express();
 app.use(cors({
-    origin: "http://localhost:5173",
-    credentials: true
+    origin: "http://localhost:5173/register",
+    credentials: true,
 }))
 dotenv.config();
 
