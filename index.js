@@ -13,11 +13,6 @@ import MessageModel from "./Models/Message.js"
 import getconversation from "./helper/getconversation.js"
 
 const app = express();
-
-app.use(cors({
-    origin:"*",
-    credentials:true,
-}))  
   
   
 dotenv.config();
