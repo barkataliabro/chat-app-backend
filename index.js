@@ -1,5 +1,4 @@
 import express from "express"
-import cors from "cors"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
 import userrouter from "./Router/index.js"
@@ -22,7 +21,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/api", userrouter)
 app.get("/",(req,res)=>{
-    res.send("hello api is working cors changing options")
+    res.send("hello api is workingcor uni")
 })
 
 const connect = () => {
