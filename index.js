@@ -23,6 +23,9 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api", userrouter)
+app.get("/",(req,res)=>{
+    res.send("hello api is working")
+})
 
 const connect = () => {
     mongoose.connect(process.env.MONGO_URL).then(() => {
